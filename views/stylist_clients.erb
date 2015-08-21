@@ -11,7 +11,11 @@
 
   <ul>
     <% @stylist.clients().each() do |client| %>
-      <li><%= client.name() %></li>
+      <li>
+        <%= client.name() %>
+        <%=client.id%>
+        <a href="/clients/<%= client.id%>" method="delete">Delete</a>
+      </li>
       <% end %>
   </ul>
   <% else %>
