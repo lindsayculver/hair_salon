@@ -1,20 +1,10 @@
-<center>
+<div class="main_box">
+
 <h1>Epicodus Hair Salon</h1>
-</center>
 
-<h3>Here are all of the stylists in the database:</h3>
-
-<%if @stylist.any?()%>
-  <p> Click on a stylist to view clients:</p>
-
-  <ul>
-    <% @stylist.each do |stylist| %>
-      <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p> There are no stylists added yet!</p>
-<% end %>
-
-<br>
-<p><a href="/stylists/new"> Add a New Stylist</a></p>
+<div class="container">
+  <a href="/stylists" class="btn btn-default btn-lg btn-block">See Stylists</a>
+</br>
+<a href="/stylists/new" class="btn btn-default btn-lg btn-block">Add New Stylist</a>
+</div>
+</div>

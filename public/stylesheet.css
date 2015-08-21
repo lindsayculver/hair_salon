@@ -1,0 +1,25 @@
+body {
+  background:url("../images/hair7.jpg") no-repeat center
+  center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main_box {
+  width: 990px;
+  height: 250px;
+  background: white;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
