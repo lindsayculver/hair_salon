@@ -1,5 +1,13 @@
 require('spec_helper')
 
+DB = PG.connect({:dbname => 'hair_salon_test'})
+
+RSpec.configure do |config|
+  config.after(:each) do
+    DB.exec("DELETE FROM stylists *;")
+  end
+end
+
 describe(Stylist) do
 
   describe(".all") do
@@ -48,5 +56,17 @@ describe(Stylist) do
       expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
     end
   end
+
+  describe("#client") do
+  it("returns an array of clients for that stylist") do
+    test_stylist = Stylist.new({:name => 'Debbie Hairy', :id => nil})
+    test_stylist.save()
+    test_client = Client.new({:name => 'Elle Woods', :stylist_id => test_stylist.id()})
+    test_client.save()
+    test_client2 = Client.new({:name => 'Blair Waldorf', :stylist_id => test_stylist.id()})
+    test_client2.save()
+    expect(test_stylist.clients()).to(eq([test_client, test_client2]))
+  end
+end
 
 end
