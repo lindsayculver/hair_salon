@@ -27,7 +27,7 @@ class Stylist
   end
 
   define_singleton_method(:find) do |id|
-    found_list = nil
+    found_stylist = nil
     Stylist.all().each() do |stylist|
       if stylist.id().==(id)
         found_stylist = stylist
@@ -39,7 +39,7 @@ class Stylist
   define_method(:clients) do
     stylist_clients = []
     clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()};")
-    clients.each() do |clients|
+    clients.each() do |client|
       name = client.fetch("name")
       stylist_id = client.fetch("stylist_id").to_i()
       stylist_clients.push(Client.new({:name => name, :stylist_id => stylist_id}))

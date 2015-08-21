@@ -1,0 +1,25 @@
+<h2><%= @stylist.name() %></h2>
+
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <input id="name" name="name" type="hidden">
+  <button type="submit">Delete Stylist</button>
+</form>
+
+<h3>Add a client to <%= @stylist.name() %></h3>
+
+<form action="/clients" method="post">
+  <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
+
+  <label for="name">Client Name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">Add Client</button>
+</form>
+
+
+<div class="container">
+  <a href="/">Home</a>
+  <br>
+  <a href="/lists">View All Stylists</a>
+</div>
