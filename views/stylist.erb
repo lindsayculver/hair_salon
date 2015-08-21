@@ -1,0 +1,30 @@
+<h3>Stylist's Name:  <%= @stylist.name() %></h3>
+
+<hr>
+
+<% if @clients == nil  %>
+
+  <p>Stylist has no current clients</p>
+
+<% else %>
+  <p>Current clients:</p>
+  <ul>
+    <% @clients.each() do |client| %>
+    <li><a href="/clients/<%= client.id() %>"><%= client.name() %></a></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+
+<br>
+
+<hr>
+
+<br>
+
+<p>Administration Options</p>
+<ul>
+  <li> <a href="/stylists/<%= @stylist.id() %>/add_client">Add a Client to This Stylist</a> </li>
+  <li> <a href="/stylists/<%= @stylist.id() %>/stylist_update">Update Stylist Name</a> </li>
+</ul>

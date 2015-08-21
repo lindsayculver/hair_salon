@@ -1,10 +1,10 @@
-require("rspec")
-require("pg")
-require("stylist")
-require("client")
-require('capybara/rspec')
+require('rspec')
+require('pg')
+require('pry')
+require('client')
+require('stylist')
 
-DB = PG.connect({:dbname => "hair_salon_test"})
+DB = PG.connect({:dbname => 'hair_salon_test'})
 
 RSpec.configure do |config|
   config.after(:each) do

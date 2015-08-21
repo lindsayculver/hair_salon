@@ -11,7 +11,7 @@ class Client
     end
 
      define_singleton_method(:all) do
-       returned_tasks = DB.exec("SELECT * FROM clients;")
+       returned_clients = DB.exec("SELECT * FROM clients;")
        clients = []
        returned_clients.each() do |client|
          name = client.fetch("name")
