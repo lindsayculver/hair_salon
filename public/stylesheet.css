@@ -8,10 +8,10 @@ body {
 }
 
 .main_box {
-  width: 990px;
+  width: 1200px;
   height: 250px;
   background: white;
-  opacity: .5;
+  opacity: .6;
   position: absolute;
   top: 0;
   right: 0;

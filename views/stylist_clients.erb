@@ -7,19 +7,18 @@
 </form>
 
 <% if @stylist.clients().any?() %>
-  <h3>Clients for <%= @stylist.name() %> :</h3>
+  <h3> <%= @stylist.name() %> 's clients:</h3>
 
   <ul>
     <% @stylist.clients().each() do |client| %>
       <li><%= client.name() %></li>
       <% end %>
   </ul>
-
   <% else %>
+<% end %>
 
-  <% end %>
 
-  <h3>Add a client to <%= @stylist.name() %></h3>
+  <h3>Add to <%= @stylist.name() %> 's client list:</h3>
 
   <form action="/clients" method="post">
     <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
@@ -34,5 +33,5 @@
 <div class="container">
   <a href="/">Home</a>
   <br>
-  <a href="/lists">View All Stylists</a>
+  <a href="/stylists">View All Stylists</a>
 </div>
