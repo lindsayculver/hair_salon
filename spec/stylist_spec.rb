@@ -1,7 +1,7 @@
 require('spec_helper')
 
 describe('Stylist') do
-  
+
   describe('.all') do
     it('starts off with no stylists') do
       expect(Stylist.all()).to(eq([]))
@@ -15,4 +15,12 @@ describe('Stylist') do
   end
  end
 
+  describe('#id') do
+    it('sets its ID when you save it') do
+      stylist = Stylist.new({:name => 'Debbie Hairy', :id => nil})
+      stylist.save()
+      expect(stylist.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
+  
 end
