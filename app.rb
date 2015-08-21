@@ -38,7 +38,7 @@ post("/clients") do
   @stylist = Stylist.find(stylist_id)
   @client = Client.new({:name => name, :stylist_id => stylist_id})
   @client.save()
-  erb(:success)
+  erb(:stylist_clients)
 end
 
 patch('/stylists/:id') do
